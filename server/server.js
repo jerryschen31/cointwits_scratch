@@ -22,6 +22,7 @@ app.get('/user', function (req, res) {
       if (error) throw error;
 
       // Getting the 'response' from the database and sending it to our route. This is were the data is.
+      console.log('got a request!', req);
       res.status(200).send(results)
     });
   });
