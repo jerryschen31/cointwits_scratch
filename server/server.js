@@ -22,12 +22,12 @@ app.get('/user', function (req, res) {
       if (error) throw error;
 
       // Getting the 'response' from the database and sending it to our route. This is were the data is.
-      res.send(results)
+      res.status(200).send(results)
     });
   });
 });
 
 // Starting our server.
 app.listen(3000, () => {
- console.log('Go to http://35.165.108.84:3000/user so you can see the data.');
+ console.log('Go to http://34.221.162.129:3000/user so you can see the data.');
 });
