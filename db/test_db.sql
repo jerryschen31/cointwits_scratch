@@ -4,6 +4,8 @@ source create_followers.sql;
 source create_topic.sql;
 source create_post.sql;
 source create_bookmark.sql;
+source create_exchange.sql;
+source create_coin.sql;
 
 /* first create a few users */
 insert into user (user_id, user_firstname, user_lastname, user_password_hash, user_email, user_about, user_location, user_image_url) values ('jerryschen', 'Jerry', 'Chen', 'abcde', 'jerryschen@gmail.com', 'Creator of Cointwits', 'San Jose, CA', '...');
@@ -31,3 +33,20 @@ insert into post (post_title, post_text, post_image_url, post_timestamp, post_li
 
 /* create post under topic dogecoin */
 insert into post (post_title, post_text, post_image_url, post_timestamp, post_likes, post_isbookmarked, post_createdby, post_parent, post_root, post_topic) values ('test post by wei', 'testing wei message...', '...', '2021-08-21 13:25:45', 0, FALSE, (select user_pk from user where user_id = 'weizuo'), 1, 1, (select topic_pk from topic where topic_name='dogecoin'));
+
+/* create crypto exchange and a bunch of coins */
+insert into exchange (exchange_name) values ('Crypto');
+
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Cardano', 'ADA', 'ADA.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Algorand', 'ALGO', 'ALGO.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Bitcoin', 'BTC', 'BTC.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Dogecoin', 'DOGE', 'DOGE.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Ethereum', 'ETH', 'ETH.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Filecoin', 'FIL', 'FIL.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Chainlink', 'LINK', 'LINK.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Litecoin', 'LTC', 'LTC.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Polygon', 'MATIC', 'MATIC.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Polkadot', 'DOT', 'DOT.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Nano', 'NANO', 'NANO.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Uniswap', 'UNI', 'UNI.png');
+insert into coin (exchange_fk, coin_name, coin_symbol, coin_logo) values (1, 'Ripple', 'XRP', 'XRP.png');
