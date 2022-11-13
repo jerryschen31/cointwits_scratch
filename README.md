@@ -1,2 +1,2 @@
 # cointwits
-Mobile version of Cointwits
+Mobile version of Cointwits. Scratch work.
